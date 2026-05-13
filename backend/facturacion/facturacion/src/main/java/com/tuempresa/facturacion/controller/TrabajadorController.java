@@ -6,6 +6,8 @@ import com.tuempresa.facturacion.model.Trabajador;
 
 @RestController
 @RequestMapping("/trabajadores")
+@CrossOrigin(origins = "http://localhost:5173")
+
 public class TrabajadorController {
 
     private final TrabajadorRepository repo;
