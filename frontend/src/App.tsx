@@ -2,6 +2,7 @@ import { useState } from "react";
 import TrabajadorList from "./components/TrabajadorList";
 import "./App.css";
 
+
 function App() {
   // Estado para controlar qué sección se muestra en el contenido principal
   const [view, setView] = useState("trabajadores");
@@ -45,7 +46,7 @@ function App() {
     <div className="app-container">
       {/* Sidebar: Barra lateral con navegación temática */}
       <aside className="sidebar">
-        <h2>Facturacion-SAJ</h2>
+        <h2>FactuApp</h2>
         <nav className="nav-menu">
           <div 
             className={`nav-item ${view === "facturas" ? "active" : ""}`} 
@@ -95,3 +96,8 @@ function App() {
           {renderContent()}
         </section>
       </main>
+    </div>
+  );
+}
+
+export default App;
