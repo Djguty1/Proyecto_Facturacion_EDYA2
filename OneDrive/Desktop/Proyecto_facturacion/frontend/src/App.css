@@ -1,0 +1,145 @@
+/* Paleta de Colores Profesional y Variada */
+:root {
+  --bg-main: #ffffff;           
+  --sidebar-bg: #1e293b;        
+  --card-bg: #f1f1f14a;           
+  --text-dark: #334155;         
+  --text-light: #f9f8f875;        
+  
+  /* Acentos de Color por Función */
+  --primary: #6366f1;          
+  --secondary: #0ea5e9;        
+  --accent: #8b5cf6;         
+  --tertiary: #10b981;          
+  
+  --border-color: #144789;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Sidebar con gradiente sutil */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  color: var(--text-light);
+  padding: 2rem 1rem;
+  box-shadow: 4px 0 10px rgba(0,0,0,0.05);
+}
+
+.sidebar h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(to right, #818cf8, #38bdf8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Items de navegación con colores dinámicos */
+.nav-item {
+  padding: 0.9rem 1.2rem;
+  margin-bottom: 0.6rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: #4982d1;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+}
+
+/* Colores específicos para cuando están activos */
+.nav-item.active[data-view="facturas"] { background: var(--secondary); color: white; box-shadow: 0 4px 12px rgba(28, 165, 229, 0.3); }
+.nav-item.active[data-view="trabajadores"] { background: var(--primary); color: white; box-shadow: 0 4px 12px rgba(112, 114, 255, 0.3); }
+.nav-item.active[data-view="departamentos"] { background: var(--accent); color: white; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3); }
+.nav-item.active[data-view="cola"] { background: var(--tertiary); color: white; box-shadow: 0 4px 12px rgba(16, 185, 44, 0.3); }
+
+/* Contenido Principal */
+.main-content {
+  flex-grow: 1;
+  padding: 2rem 3rem;
+}
+
+.main-content h1 {
+  font-size: 1.8rem;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+/* Tarjetas y Tablas */
+.data-table-container {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+table th {
+  background-color: #f8fafc;
+  color: #64748b;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 1rem;
+}
+
+table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Botones con más "vida" */
+.btn-primary {
+  background: var(--primary);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+/* Estilo para las vistas que aún no tienen componentes (como en image_ce2d13.png) */
+.placeholder-view {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-dark); /* Asegura que el texto use el gris oscuro */
+}
+
+.placeholder-view h2 {
+  color: #1e293b; /* Un azul pizarra oscuro muy legible */
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.placeholder-view p {
+  color: #64748b; /* Gris intermedio para la descripción */
+  font-size: 1.1rem;
+}
+
+/* Mejora para el resaltado de texto en toda la app */
+::selection {
+  background-color: var(--primary);
+  color: white;
+}
