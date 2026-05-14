@@ -95,8 +95,3 @@ function App() {
           {renderContent()}
         </section>
       </main>
-    </div>
-  );
-}
-
-export default App;
